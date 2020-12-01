@@ -1,0 +1,360 @@
+//breakpoints
+// 600px 
+// 600px
+// 768px
+// 992px
+// 1200px
+
+@mixin breakpoint($min: 0, $max: 0) {
+    $type: type-of($min);
+    @if $type == string {
+        @if $min == mobile {
+            @media (max-width: 37.5rem) { @content; }
+        }
+        @else if $min == phablet {
+            @media (min-width: 37.5rem) { @content; }
+        } 
+        @else if $min == tablet {
+            @media (min-width: 48rem) { @content; }
+        } 
+        @else if $min == laptop {
+            @media (min-width: 62rem) { @content; }
+        } 
+        @else if $min == desktop {
+            @media (min-width: 75rem) { @content; }
+        }
+        @else {
+            @warn "Breakpoint mixin supports: mobile, phablet, tablet, laptop, desktop.";
+        }
+    }
+    @else if $type == number {
+        $query: "all" !default;
+        @if $min != 0 and $max != 0 { 
+          $query: "(min-width: #{$min}) and (max-width: #{$max})"; 
+        }
+        @else if $min != 0 and $max == 0 { 
+          $query: "(min-width: #{$min})"; 
+        }
+        @else if $min == 0 and $max != 0 { 
+          $query: "(max-width: #{$max})"; 
+        }
+        @media #{$query} { 
+          @content;
+        }
+    }
+}
+
+@mixin transition($what, $time, $how) {
+    -webkit-transition: $what $time $how;
+    -moz-transition:    $what $time $how;
+    -ms-transition:     $what $time $how;
+    -o-transition:      $what $time $how;
+    transition:         $what $time $how;
+}
+
+@mixin animation ($delay, $duration, $animation, $direction, $fillmode, $time) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-direction: $direction;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: $time;
+
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-direction: $direction;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: $time;
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-direction: $direction;
+    animation-timing-function: linear;
+    animation-iteration-count: $time;
+}
+
+@mixin max-width($size, $margin, $padding){
+    max-width: $size;
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin full-width{
+    width: 100%;
+    display: block
+}
+
+@mixin fonts-style($color, $font-family, $font-size, $font-weight, $line-height, $letter-spacing){
+    color: $color;
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+}
+
+@mixin font-normal($color, $size){
+    @include fonts-style($color, $font-open, $size, normal, normal, normal);
+}
+
+@mixin font-semibold($color, $size){
+    @include fonts-style($color, $font-open, $size, 600, normal, normal);
+}
+
+@mixin font-bold($color, $size){
+    @include fonts-style($color, $font-open, $size, bold, normal, normal);
+}
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin transform3D($tx, $ty, $tz, $rx, $ry, $rz, $deg) {
+  -moz-transform: translate3d($tx, $ty, $tz) rotate3d($rx, $ry, $rz, $deg);
+  -o-transform: translate3d($tx, $ty, $tz) rotate3d($rx, $ry, $rz, $deg);
+  -ms-transform: translate3d($tx, $ty, $tz) rotate3d($rx, $ry, $rz, $deg);
+  -webkit-transform: translate3d($tx, $ty, $tz) rotate3d($rx, $ry, $rz, $deg);
+  transform: translate3d($tx, $ty, $tz) rotate3d($rx, $ry, $rz, $deg);
+}
+
+@mixin position($top, $right, $bottom, $left){
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+}
+
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flexbox-inline() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: inline-flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex: $values;
+  -webkit-flex: $values;
+  -ms-flex: $values;
+  flex: $values;
+}
+
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction;
+  -moz-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+@mixin flex-wrap($wrap) {
+  -webkit-flex-wrap: $wrap;
+  -moz-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+
+@mixin flex-flow($flow) {
+  -webkit-flex-flow: $flow;
+  -moz-flex-flow: $flow;
+  -ms-flex-flow: $flow;
+  flex-flow: $flow;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+@mixin flex-grow($grow) {
+  -webkit-flex-grow: $grow;
+  -moz-flex-grow: $grow;
+  -ms-flex-grow: $grow;
+  flex-grow: $grow;
+}
+
+@mixin flex-shrink($shrink) {
+  -webkit-flex-shrink: $shrink;
+  -moz-flex-shrink: $shrink;
+  -ms-flex-shrink: $shrink;
+  flex-shrink: $shrink;
+}
+
+@mixin flex-basis($width) {
+  -webkit-flex-basis: $width;
+  -moz-flex-basis: $width;
+  -ms-flex-basis: $width;
+  flex-basis: $width;
+}
+
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+  -moz-justify-content: $justify;
+  -ms-justify-content: $justify;
+  justify-content: $justify;
+  -ms-flex-pack: $justify;
+}
+
+@mixin align-content($align) {
+  -webkit-align-content: $align;
+  -moz-align-content: $align;
+  -ms-align-content: $align;
+  align-content: $align;
+}
+
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+  -moz-align-items: $align;
+  -ms-align-items: $align;
+  align-items: $align;
+}
+
+@mixin align-self($align) {
+  -webkit-align-self: $align;
+  -moz-align-self: $align;
+  -ms-align-self: $align;
+  align-self: $align;
+}
+
+@mixin shadow($horizontal, $vertical, $blur, $spread, $color, $opacity){
+  -webkit-box-shadow: $horizontal $vertical $blur $spread rgba($color,$opacity);
+  -moz-box-shadow: $horizontal $vertical $blur $spread rgba($color,$opacity);
+  box-shadow: $horizontal $vertical $blur $spread rgba($color,$opacity);
+}
+
+/*Start fonts mixin*/
+@mixin fonts-style($color, $font-family, $font-size, $font-weight, $line-height, $letter-spacing){
+  color: $color;
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+@mixin font-display($color){
+  @include fonts-style($color, $font-family, 2.250em, normal, normal, normal);
+}
+@mixin font-h1($color){
+  @include fonts-style($color,  $font-family, 2.250em, normal, normal, normal);
+}
+@mixin font-h2($color){
+  @include fonts-style($color,  $font-family, 1.500em, normal, normal, normal);
+}
+@mixin font-h3($color){
+  @include fonts-style($color,  $font-family, 1.500em, normal, normal, normal);
+}
+@mixin font-h4($color){
+  @include fonts-style($color,  $font-family, 1.250em, normal, normal, normal);
+}
+@mixin font-h5($color){
+  @include fonts-style($color,  $font-family, 1em, normal, normal, normal);
+}
+@mixin font-h6($color){
+  @include fonts-style($color,  $font-family, 0.875em, normal, normal, normal);
+}
+@mixin font-subheading1($color){
+  @include fonts-style($color,  $font-family, 1.125em, normal, normal, normal);
+}
+@mixin font-subheading2($color){
+  @include fonts-style($color,  $font-family, 1.125em, normal, normal, normal);
+}
+@mixin font-body1($color){
+  @include fonts-style($color,  $font-family, 0.875em, normal, normal, normal);
+}
+@mixin font-body2($color){
+  @include fonts-style($color,  $font-family, 0.875em, normal, normal, normal);
+}
+@mixin font-label($color){
+  @include fonts-style($color,  $font-family, 0.875em, normal, normal, normal);
+}
+@mixin font-button($color){
+  @include fonts-style($color,  $font-family, 1.125em, normal, normal, normal);
+}
+@mixin font-menu($color){
+  @include fonts-style($color,  $font-family, 1.125em, normal, normal, normal);
+}
+@mixin font-default($color){
+  @include fonts-style($color,  $font-family, 1em, normal, normal, normal);
+}
+@mixin font-defaultBold($color){
+  @include fonts-style($color,  $font-family, 1em, normal, normal, normal);
+}
+@mixin font-copyright($color){
+  @include fonts-style($color,  $font-family, 0.750em, normal, normal, normal);
+}
+@mixin font-newcontent($color){
+  @include fonts-style($color,  $font-family, 1em, normal, normal, normal);
+}
+@mixin icons(){
+  font-family:  map-get($font-family, icons);
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 1em;
+  letter-spacing: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  font-style: normal;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/*End fonts mixin*/
+
+// FLUID TYPOGRAPHY MIXIN
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+@mixin size-display() {
+  @include fluid-type($min_width, $max_width, 2rem, 3.5rem);
+}
+
+@mixin size-title() {
+  @include fluid-type($min_width, $max_width, 1.75rem, 2.25rem);
+}
+
+@mixin size-subtitle() {
+  @include fluid-type($min_width, $max_width, 0.938rem, 1.5rem);
+}

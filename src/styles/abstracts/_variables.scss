@@ -1,0 +1,43 @@
+$colors: (
+  "yellow": #FFD200,
+  "fucsia": #F3115B,
+  "red": #FB5360,
+  "skyblue-dark": #1F90FF,
+  "skyblue-light": #8EC7FF,
+  "skyblue-back": #D4E5F3,
+  "grey": #CCCCCC,
+  "grey-light": #F2F2F2,
+  "white": #FFFFFF,
+  "black": #000000,
+  "black-light": #4F4F4F,
+  "black-lighter": #828282
+);
+
+// pixel size
+// 14px
+// 16px
+// 18px 
+// 20px
+// 22px
+// 30px
+// 36px
+// 40px
+// 55px
+// 72px
+// 75px
+// 100px
+
+$font-sizes: (
+    "regular-lower": 0.875rem,
+    "regular-low": 1rem,
+    "regular": 1.125rem,
+    "regular-high": 1.25rem,
+    "subtitles-responsive": 1.375rem,
+    "subtitles": 1.875rem,
+    "titles-low": 2.25rem,
+    "titles-responsive": 2.5rem,
+    "titles-2": 3.4375rem,
+    "titles-1": 4.5rem,
+    "clock-numbers-responsive": 4.6875rem,
+    "clock-numbers": 6.25rem
+)

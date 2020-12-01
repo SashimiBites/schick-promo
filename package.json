@@ -1,0 +1,44 @@
+{
+  "name": "sud-home",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf dist && webpack --config webpack/webpack.config.js -p",
+    "start": "webpack-dev-server --config webpack/webpack.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^9.8.6",
+    "css-loader": "^4.2.2",
+    "file-loader": "^6.0.0",
+    "gsap": "^3.5.1",
+    "handlebars": "^4.7.6",
+    "handlebars-loader": "^1.7.1",
+    "html-webpack-plugin": "^4.3.0",
+    "image-webpack-loader": "^6.0.0",
+    "jquery.marquee": "^1.5.0",
+    "mini-css-extract-plugin": "^0.11.0",
+    "moment-timezone": "^0.5.31",
+    "node-sass": "^4.14.1",
+    "perfect-scrollbar": "^1.5.0",
+    "postcss-loader": "^3.0.0",
+    "pretty-ms": "^7.0.0",
+    "rimraf": "^3.0.2",
+    "sass-loader": "^10.0.1",
+    "scroll-out": "^2.2.12",
+    "slick-carousel": "^1.8.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-jquery-ui": "^2.0.1"
+  },
+  "devDependencies": {
+    "svg-inline-loader": "^0.8.2"
+  },
+  "description": "",
+  "browserslist": [
+    "defaults"
+  ]
+}
