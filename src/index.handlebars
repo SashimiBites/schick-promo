@@ -22,19 +22,30 @@
 
 <body>
     <div class="homepageCont">
-        <section class="section sec1">
-            <div id="sec1__leafCont" class="sec1__leafCont"></div>
-            <div class="sec1__backgroundImage">
-                <img class="sec1__logo" src="./static/main-logo.png" alt="schick-logo">
-                <img class="sec1__slogan" src="./static/main-text.png" alt="main-text">
+        <section id="section1" class="section sec1">
+            <div id="sec1__leafCont" class="sec1__leafCont">
+                <img class="leaf1" src="./static/leaf1.png" alt="hoja1">
+                <img class="leaf2" src="./static/leaf2.png" alt="hoja2">
+                <img class="leaf3" src="./static/leaf3.png" alt="hoja3">
+                <img class="leaf4" src="./static/leaf4.png" alt="hoja4">
+                <img class="leaf5" src="./static/leaf5.png" alt="hoja5">
+                <img class="leaf6" src="./static/leaf6.png" alt="hoja6">
+                <img class="leaf7" src="./static/leaf2.png" alt="hoja7">
+            </div>
+            <img id="sec1__logo" class="sec1__logo" src="./static/main-logo.svg" alt="schick-logo">
+            <div id="sec1__backgroundImage" class="sec1__backgroundImage">
+                <img id="sec1__slogan" class="sec1__slogan" src="./static/main-text.png" alt="main-text">
+                <video class="sec1__videoBack" muted loop autoplay>
+                    <source src="./static/main-backVideo.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="sec1__bot">
                 <div class="bot__container">
-                    <div class="imageGroup">
+                    <div id="sec1_anim1" class="imageGroup">
                         <img class="image1" src="./static/main-image1.png" alt="schick-producto">
                         <img class="image2" src="./static/main-image2.png" alt="schick-producto">
                     </div>
-                    <div class="groupRight">
+                    <div id="sec1_anim2" class="groupRight">
                         <div class="iconGroup">
                             <img class="iconGroup__icon" src="./static/main-icon1.png" alt="schick-icon">
                             <p class="iconGroup__text">Empaque 100% reciclable</p>
@@ -52,19 +63,19 @@
             </div>
         </section>
 
-        <section class="section sec2">
+        <section id="section2" class="section sec2">
             <div class="sec2__background">
-                <h1 class="sec2__title">
+                <h1 class="sec2__title sec2__anim1">
                     <span>TU APORTE AYUDARÁ</span>
                     <br> 
                     A LA REFORESTACIÓN DE LA SELVA PERUANA EN CONJUNTO CON EL REGIGIO K’ERENDA HOMET
                 </h1>
-                <img class="sec2__icon" src="./static/sec2-icon.png" alt="schick-icon">
+                <img class="sec2__icon sec2__anim1" src="./static/sec2-icon.png" alt="schick-icon">
             </div>
             <div class="sec2__bot">
                 <form class="formCode" action="" method="POST">
                     <div class="formCode__top">
-                        <h1 class="titleTop">INGRESA TU CÓDIGO, CONCURSA Y AYUDA</h1>
+                        <img class="imgTitle" src="./static/sec2-title.svg">
                     </div>
                     <input type="text" id="form_name" name="form_name" class="formCode__input" placeholder="NOMBRE">
                     <input type="text" id="form_email" name="form_email" class="formCode__input" placeholder="CORREO ELECTRÓNICO">
@@ -83,6 +94,9 @@
                 </form>
             </div>
             <div class="sec2__bot2">
+                <video class="sec2__videoBack" muted loop autoplay>
+                    <source src="./static/sec2-backVideo.mp4" type="video/mp4">
+                </video>
                 <div class="bot2__center">
                     <img class="imgPlant" src="./static/sec2-plant.png">
                     <h1 class="titleTop">¡GRACIAS POR TU AYUDA!</h1>
@@ -99,48 +113,87 @@
                 <h1 class="titleTop">PREMIOS</h1>
             </div>
             <div class="sec3__center">
-                <p class="descriptionTop">INGRESANDO TU CODIGO PODRÁS GANAR LOS SIGUIENTES PREMIOS, BASES ANTE NOTARIO</p>
+                <p class="descriptionTop">INGRESA TU CODIGO DE PRODUCTO + NÚMERO DE BOLETA Y PODRÁS GANAR UNO DE ESTOS INCREÍBLES PREMIOS</p>
                 <div class="prize-carousel">
                     <div class="prizeCard">
-                        <img class="prizeCard__img" src="./static/sec3-premio.png">
+                        <img class="prizeCard__img" src="./static/sec3-premio1.png">
                         <h4 class="prizeCard__title">BICICLETA ELECTRICA JEEP</h4>
                     </div>
                     <div class="prizeCard">
-                        <img class="prizeCard__img" src="./static/sec3-premio.png">
+                        <img class="prizeCard__img" src="./static/sec3-premio2.png">
                         <h4 class="prizeCard__title">BICICLETA ELECTRICA JEEP</h4>
                     </div>
                     <div class="prizeCard">
-                        <img class="prizeCard__img" src="./static/sec3-premio.png">
+                        <img class="prizeCard__img" src="./static/sec3-premio3.png">
                         <h4 class="prizeCard__title">BICICLETA ELECTRICA JEEP</h4>
                     </div>
                     <div class="prizeCard">
-                        <img class="prizeCard__img" src="./static/sec3-premio.png">
+                        <img class="prizeCard__img" src="./static/sec3-premio4.png">
                         <h4 class="prizeCard__title">BICICLETA ELECTRICA JEEP</h4>
                     </div>
                     <div class="prizeCard">
-                        <img class="prizeCard__img" src="./static/sec3-premio.png">
-                        <h4 class="prizeCard__title">BICICLETA ELECTRICA JEEP</h4>
-                    </div>
-                    <div class="prizeCard">
-                        <img class="prizeCard__img" src="./static/sec3-premio.png">
+                        <img class="prizeCard__img" src="./static/sec3-premio5.png">
                         <h4 class="prizeCard__title">BICICLETA ELECTRICA JEEP</h4>
                     </div>
                 </div>
             </div>
-            <div class="sec3__space"></div>
+        </section>
+
+        <section class="section sec7">
+            <div class="sec7__backTop">
+                <img class="backTop__imgCenter" src="./static/sec7-mapa.svg">
+                <img class="backTop__imgFront" src="./static/main-icon1.png">
+            </div>
+            <div class="sec7__backCenter">
+                <div class="backCenter__title">
+                    <img class="imgTitle" src="./static/sec7-title.svg">
+                </div>
+                <p class="backCenter__text">
+                    En Perú se usan en <span class="number">1</span> año aproximadamente:
+                </p>
+                <div class="backCenter__infoCont">
+                    <div class="infoBubble bubble1">
+                        <span class="tall">30 kilos</span> de plástico por ciudadano.
+                    </div>
+                    <div class="infoBubble bubble2">
+                        <span class="tall">3.000</span> millones de bolsas plásticas.
+                    </div>
+                    <div class="infoBubble bubble3">
+                        <span class="tall">6.000</span> bolsas por cada minuto.
+                    </div>
+                </div>
+            </div>
+            <div class="sec7__backBot">
+                <p class="backBot__text">
+                    En el último medio año 2019, Perú dejó de utilizar mil millones de bolsas de plástico gracias a la ley elaborada para reducir el plástico de un solo uso, lo que también llevó a ahorrarse la utilización de 800 toneladas de Tecnopor (poliestireno expandido).
+                </p>
+            </div>
         </section>
 
         <section class="section sec4">
-            <div class="sec4__background">
-                <p class="sec4__title">En Schick buscamos ser aliados en el cuidado del medio ambiente</p>
+            <div class="sec4__backTop">
+                <div class="sec4__title">
+                    En
+                    <img class="image1" src="./static/sec4-logo.svg" alt="schick-logo"> 
+                    buscamos ser aliados en el cuidado del medio ambiente
+                </div>
             </div>
+            <div class="sec4__background"></div>
+            <div class="sec4__greenBar"></div>
             <div class="sec4__bot">
                 <div class="sec4__contain">
                     <div class="imageGroup">
                         <img class="image1" src="./static/main-image1.png" alt="schick-producto">
                         <img class="image2" src="./static/main-image2.png" alt="schick-producto">
                     </div>
-                    <div class="textRight">Por eso decidimos crear Schick Xtreme 3 Ultimate Eco, una máquina de afeitar cuyo mango y empaque están hechos de material reciclado y son 100% reciclables.</div>
+                    <div class="textRight">
+                        <p class="textRight__top">
+                            Por eso decidimos crear <span>Schick Xtreme 3 Ultimate Eco</span>,una máquina de afeitar cuyo mango y empaque están hechos de material reciclado y son
+                        </p>
+                        <p class="textRight__bot">
+                            100% reciclables.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -150,17 +203,58 @@
             <div class="sec5__bot">
                 <img class="sec5__icon" src="./static/sec5-icon.png" alt="schick-icon">
                 <div class="sec5__textCont">
-                    Nuestro aporte ayudará a la reserva natural Kerenda Homet, ubicada en Madre de Dios, Su labor es la promoción de la conservación, Agroforestería y promoción de la investigación en la selva peruana.
+                    <p class="text1">
+                        Los aportes de esta campaña ayudarán a la reserva natural K’erenda Homet, ubicada en Puerto Maldonado, Madre de Dios.
+                    </p>
+                    <p class="text2">
+                        Su labor es la promoción de la conservación, agroforestería y la investigación en la selva peruana.
+                    </p>
                 </div>
                 <img class="sec5__imageLeft" src="./static/sec5-imageLeft.png" alt="schick-imageLeft">
                 <img class="sec5__imageRight" src="./static/sec5-imageRight.png" alt="schick-imageRight">
             </div>
+            <div class="sec5__greenTop">
+                <p class="greenTop__text">
+                    Con tu ayuda la reserva plantará una variedad de árboles y plantas ideales para la conservación de su ecosistema.
+                </p>
+            </div>
+            <div class="sec5__greenBot">
+                <div class="treeContainer">
+                    <h1 class="treeContainer__title">ARBOLES FRUTALES</h1>
+                    <div class="treeContainer__center">
+                        <img class="treeContainer__imageCenter" src="./static/sec5-tree1.png" alt="arboles-frutales">
+                    </div>
+                    <p class="treeContainer__description">
+                        Palto, Guayabo, Zapote, Guaba, Pijuayo, Pama, Palmera, Shimicua, Moquete de Tigre, Anona.
+                    </p>
+                </div>
+                <div class="treeContainer">
+                    <h1 class="treeContainer__title">ARBOLES FORESTALES</h1>
+                    <div class="treeContainer__center">
+                        <img class="treeContainer__imageCenter" src="./static/sec5-tree2.png" alt="arboles-forestales">
+                    </div>
+                    <p class="treeContainer__description">
+                        Shihuahuaco, Shiringa, Tahuari, Copaiba, Pashaco Blanco y Colorado, Lupuna, Castaño, Capirona.
+                    </p>
+                </div>
+                <div class="treeContainer">
+                    <h1 class="treeContainer__title">ARBOLES MEDICINALES</h1>
+                    <div class="treeContainer__center">
+                        <img class="treeContainer__imageCenter" src="./static/sec5-tree3.png" alt="arboles-frutales">
+                    </div>
+                    <p class="treeContainer__description">
+                        Uña de gato, Sangre de Grado, Para Para.
+                    </p>
+                </div>
+            </div>
             <div class="photo-carousel">
-                <img class="photo__image" src="./static/sec5-photo.png">
-                <img class="photo__image" src="./static/sec5-photo.png">
-                <img class="photo__image" src="./static/sec5-photo.png">
-                <img class="photo__image" src="./static/sec5-photo.png">
-                <img class="photo__image" src="./static/sec5-photo.png">
+                <img class="photo__image" src="./static/sec5-photo1.jpg">
+                <img class="photo__image" src="./static/sec5-photo2.jpg">
+                <img class="photo__image" src="./static/sec5-photo3.jpg">
+                <img class="photo__image" src="./static/sec5-photo4.jpg">
+                <img class="photo__image" src="./static/sec5-photo5.jpg">
+                <img class="photo__image" src="./static/sec5-photo6.jpg">
+                <img class="photo__image" src="./static/sec5-photo7.jpg">
             </div>
         </section>
 

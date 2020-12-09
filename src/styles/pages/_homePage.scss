@@ -27,9 +27,20 @@ html, body {
         position: relative;
         overflow: hidden;
 
-        .sec1__leafCont {
+        .sec1__logo {
+            display: block;
+            position: absolute;
+            top: 170px;
             width: 100%;
-            height: 100%;
+            max-width: 150px;
+            z-index: 550;
+            opacity: 1;
+            transform: scale(2);
+        }
+
+        .sec1__leafCont {
+            width: 100vw;
+            height: 100vh;
             position: fixed;
             top: 0;
             left: 0;
@@ -37,12 +48,76 @@ html, body {
             pointer-events: none;
             overflow: hidden;
 
-            .dot{
-                width:50px;
-                height:50px;
+            .leaf1 {
+                @include breakpoint(phablet) {
+                    width: 10%;
+                }
                 position:absolute;
-                background: url("../static/leaf/leaf2.png");
-                background-size: 100% 100%;
+                width: 20%;
+                bottom: -5%;
+                left: 5%;
+            }
+
+            .leaf2 {
+                @include breakpoint(phablet) {
+                    top: -5%;
+                    width: 15%;
+                    right: 5%;
+                }
+                position:absolute;
+                width: 30%;
+                top: -2%;
+                right: 0%;
+            }
+
+            .leaf3 {
+                @include breakpoint(phablet) {
+                    top: 25%;
+                }
+                position:absolute;
+                width: 15%;
+                top: 50%;
+                left: 0%;
+            }
+
+            .leaf4 {
+                @include breakpoint(phablet) {
+                    top: 20%;
+                }
+                position:absolute;
+                width: 15%;
+                top: 50%;
+                left: 50%;
+            }
+
+            .leaf5 {
+                position:absolute;
+                width: 10%;
+                bottom: 10%;
+                left: 45%;
+            }
+
+            .leaf6 {
+                @include breakpoint(phablet) {
+                    width: 10%;
+                }
+                position:absolute;
+                width: 20%;
+                bottom: 0%;
+                right: 0%;
+            }
+
+            .leaf7 {
+                @include breakpoint(phablet) {
+                    top: -5%;
+                    width: 15%;
+                    left: 25%;
+                }
+                position:absolute;
+                width: 30%;
+                top: 10%;
+                left: 10%;
+                transform: scaleX(-1);
             }
         }
 
@@ -56,29 +131,30 @@ html, body {
             justify-content: center;
             align-items: center;
             position: relative;
-            margin-top: 100px;
+            margin-top: 500px;
             width: 100%;
-            background-image: url("../static/section1/main-background.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
             min-height: 350px;
             z-index: 500;
             box-sizing: border-box;
             padding: 0 20px;
-
-            .sec1__logo {
-                display: block;
-                position: absolute;
-                top: -95px;
-                width: 100%;
-                max-width: 150px;
-            }
+            overflow: hidden;
 
             .sec1__slogan {
                 display: block;
                 width: 100%;
                 max-width: 550px;
+                z-index: 550;
+                opacity: 0;
+            }
+
+            .sec1__videoBack {
+                display: block;
+                min-width: 100%;
+                min-height: 100%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
         }
 
@@ -121,6 +197,7 @@ html, body {
                     justify-content: center;
                     align-items: center;
                     width: 250px;
+                    opacity: 0;
 
                     .image1 {
                         @include breakpoint(phablet) {
@@ -142,26 +219,27 @@ html, body {
                     @include breakpoint(phablet) {
                         flex-direction: row;
                         justify-content: space-around;
+                        align-items: flex-start;
                     }
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    margin-top: 40px;
+                    margin-top: 25px;
                     width: 100%;
+                    opacity: 0;
                 }
 
                 .iconGroup {
                     @include breakpoint(phablet) {
                         margin-bottom: 0px;
-                        max-width: 135px;
                     }
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-start;
                     align-items: center;
                     width: 100%;
-                    max-width: 120px;
+                    max-width: 150px;
                     margin-bottom: 15px;
 
                     .iconGroup__icon {
@@ -170,12 +248,16 @@ html, body {
                     }
 
                     .iconGroup__text {
+                        @include breakpoint(phablet) {
+                            font-size: 28px;
+                            line-height: 32px;
+                        }
                         color: #437D3B;
                         text-align: center;
                         width: 100%;
                         font-weight: 700;
-                        font-size: 16px;
-                        line-height: 20px;
+                        font-size: 24px;
+                        line-height: 28px;
                     }
                 }
             }
@@ -221,6 +303,7 @@ html, body {
                 color: #ffffff;
                 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
                 margin-bottom: 40px;
+                opacity: 0;
 
                 span {
                     @include breakpoint(phablet) {
@@ -236,6 +319,7 @@ html, body {
             .sec2__icon {
                 width: 100%;
                 max-width: 150px;
+                opacity: 0;
             }
         }
 
@@ -257,37 +341,19 @@ html, body {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                margin-top: -40px;
+                margin-top: -35px;
                 z-index: 750;
                 
                 .formCode__top {
-                    @include breakpoint(phablet) {
-                        max-width: 550px;
-                        padding: 10px 65px;
-                    }
                     display: flex;
-                    background-image: url("../static/section2/sec2-container.png");
-                    background-repeat: no-repeat;
-                    background-size: 100%;
-                    background-position: center center;
-                    border-radius: 28px;
-                    box-sizing: border-box;
-                    padding: 10px 0px;
-                    margin-bottom: 25px;
-                    width: 100%;
-                    max-width: 100%;
+                    justify-content: center;
+                    align-items: center;
+                    max-width: 550px;
+                    margin-bottom: 40px;
+                    z-index: 550;
 
-                    .titleTop {
-                        @include breakpoint(phablet) {
-                            font-size: 36px;
-                            line-height: 40px;
-                        }
-                        text-align: center;
-                        color: #295C22;
-                        font-weight: 700;
-                        font-size: 26px;
-                        line-height: 30px;
-                        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    .imgTitle {
+                        width: 100%;
                     }
                 }
 
@@ -303,16 +369,21 @@ html, body {
                     border-width: 0px;
                     border:none;
                     -webkit-appearance: none;
-                    min-height: 40px;
                     color: black;
                     font-weight: bold;
                     margin-bottom: 10px;
-                    padding: 0 15px;
+                    padding: 10px 15px;
                     box-sizing: border-box;
+                    font-family: $font-family-primary;
+                    font-size: 24px;
+                    line-height: 28px;
                 
                     &::placeholder {
                         color: black;
                         font-weight: bold;
+                        font-family: $font-family-primary;
+                        font-size: 24px;
+                        line-height: 28px;
                     }
 
                     &:focus {
@@ -331,17 +402,29 @@ html, body {
                     text-align: left;
                     border-width: 0px;
                     border:none;
-                    -webkit-appearance: none;
-                    min-height: 40px;
+                    -moz-appearance:none; /* Firefox */
+                    -webkit-appearance:none; /* Safari and Chrome */
+                    appearance:none;
                     color: black;
                     font-weight: bold;
                     margin-bottom: 10px;
-                    padding: 0 15px;
+                    padding: 10px 15px;
                     box-sizing: border-box;
+                    background-image: url("../static/section2/sec2-arrow-down.png");
+                    background-repeat: no-repeat;
+                    background-size: 16px;
+                    background-position: 95% 50%;
+                    cursor: pointer;
+                    font-family: $font-family-primary;
+                    font-size: 24px;
+                    line-height: 28px;
                 
                     &::placeholder {
                         color: black;
                         font-weight: bold;
+                        font-family: $font-family-primary;
+                        font-size: 24px;
+                        line-height: 28px;
                     }
 
                     &:focus {
@@ -400,6 +483,17 @@ html, body {
             background-size: cover;
             background-position: center center;
             z-index: 500;
+            overflow: hidden;
+
+            .sec2__videoBack {
+                display: block;
+                min-width: 100%;
+                min-height: 100%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
 
             .bot2__center {
                 display: flex;
@@ -485,17 +579,25 @@ html, body {
             background-size: cover;
             background-position: center center;
             box-sizing: border-box;
-            padding: 40px 0px 80px 0px;
+            padding: 40px 0px 120px 0px;
 
             .descriptionTop {
+                @include breakpoint(phablet) {
+                    font-size: 32px;
+                    line-height: 36px;
+                    max-width: 550px;
+                    padding: 0px;
+                }
                 color: #437D3B;
                 font-weight: 700;
                 font-size: 24px;
                 line-height: 28px;
                 margin-bottom: 60px;
-                max-width: 550px;
+                max-width: 100%;
                 width: 100%;
                 text-align: center;
+                padding: 0 20px;
+                box-sizing: border-box;
             }
 
             .prize-carousel {
@@ -573,24 +675,202 @@ html, body {
                     .prizeCard__img {
                         width: 100%;
                         display: block;
-                        margin-bottom: 20px;
+                        margin-bottom: 15px;
                     }
 
                     .prizeCard__title {
                         text-align: center;
                         color: #437D3B;
                         font-weight: bold;
-                        font-size: 24px;
-                        line-height: 28px;
+                        font-size: 32px;
+                        line-height: 36px;
                     }
                 }
             }
         }
+    }
 
-        .sec3__space {
-            display: block;
+    .sec7 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: #437D3B;
+
+        .sec7__backTop {
+            @include breakpoint(phablet) {
+                min-height: 200px;
+            }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             width: 100%;
-            height: 80px;
+            box-sizing: border-box;
+            padding: 15px 20px;
+            background-image: url("../static/section7/sec7-imageBack1.jpg");
+            background-repeat: repeat;
+            background-size: cover;
+            background-position: center center;
+            min-height: 200px;
+            z-index: 500;
+            opacity: 1;
+            position: relative;
+
+            .backTop__imgCenter {
+                max-width: 150px;
+                z-index: 550px;
+            }
+
+            .backTop__imgFront {
+                max-width: 50px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 600;
+            }
+        }
+
+        .sec7__backCenter {
+            @include breakpoint(phablet) {
+                padding-bottom: 0px;
+            }
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            background-image: url("../static/section7/sec7-imageBack3.png");
+            background-repeat: repeat;
+            background-size: cover;
+            background-position: center center;
+            box-sizing: border-box;
+            padding-bottom: 40px;
+
+            .backCenter__title {
+                @include breakpoint(phablet) {
+                    margin-top: -43px;
+                }
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                max-width: 550px;
+                margin-top: -30px;
+                margin-bottom: 40px;
+                z-index: 550;
+
+                .imgTitle {
+                    max-width: 100%;
+                }
+            }
+
+            .backCenter__text {
+                @include breakpoint(phablet) {
+                    font-size: 48px;
+                    line-height: 52px;
+                }
+                color: #295C22;
+                font-size: 38px;
+                line-height: 42px;
+                margin-bottom: 40px;
+                max-width: 550px;
+                text-align: center;
+
+                .number {
+                    @include breakpoint(phablet) {
+                        font-size: 62px;
+                    }
+                    font-size: 72px;
+                }
+            }
+
+            .backCenter__infoCont {
+                @include breakpoint(phablet) {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                max-width: 700px;
+                width: 100%;
+                z-index: 550;
+
+                .infoBubble {
+                    @include breakpoint(phablet) {
+                        margin-bottom: 0px;
+                    }
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 100%;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    font-size: 28px;
+                    line-height: 32px;
+                    color: white;
+                    text-align: center;
+                    margin-bottom: 15px;
+
+                    .tall {
+                        font-size: 40px;
+                        line-height: 32px;
+                        font-weight: bold;
+                        margin-bottom: 10px;
+                    }
+                }
+
+                .bubble1 {
+                    background-color: #92C95E;
+                }
+
+                .bubble2 {
+                    background-color: #295C22;
+                }
+
+                .bubble3 {
+                    background-color: #437D3B;
+                }
+            }
+        }
+
+        .sec7__backBot {
+            @include breakpoint(phablet) {
+                margin-top: -50px;
+                padding: 120px 0 80px 0px;
+            }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            background-image: url("../static/section7/sec7-imageBack2.jpg");
+            background-repeat: repeat;
+            background-size: cover;
+            background-position: center center;
+            min-height: 300px;
+            box-sizing: border-box;
+            margin-top: 0px;
+            padding: 80px 20px 80px 20px;
+            z-index: 520;
+
+            .backBot__text {
+                @include breakpoint(phablet) {
+                    font-size: 32px;
+                    line-height: 36px;
+                }
+                color: white;
+                font-size: 26px;
+                line-height: 30px;
+                text-align: center;
+                max-width: 550px;
+            }
         }
     }
 
@@ -602,9 +882,32 @@ html, body {
         width: 100%;
         background-color: #437D3B;
 
+        .sec4__backTop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 40px 20px;
+            font-size: 42px;
+            line-height: 60px;
+            color: white;
+            text-align: center;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            max-width: 500px;
+            position: relative;
+            font-weight: bold;
+            z-index: 500;
+
+            .image1 {
+                max-width: 100px;
+                margin-bottom: -14px;
+            }
+        }
+
         .sec4__background {
             @include breakpoint(phablet) {
-                min-height: 600px;
+                min-height: 400px;
             }
             display: flex;
             flex-direction: column;
@@ -617,7 +920,7 @@ html, body {
             background-repeat: repeat;
             background-size: cover;
             background-position: center center;
-            min-height: 400px;
+            min-height: 300px;
             z-index: 500;
 
             .sec4__title {
@@ -637,7 +940,16 @@ html, body {
             }
         }
 
+        .sec4__greenBar {
+            width: 100%;
+            background-color: #437D3B;
+            min-height: 10px;
+        }
+
         .sec4__bot {
+            @include breakpoint(phablet) {
+                padding: 0 20px 0px 20px; 
+            }
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -650,14 +962,14 @@ html, body {
             background-size: cover;
             background-position: center center;
             box-sizing: border-box;
-            padding: 0 20px 80px 20px; 
+            padding: 0 20px 40px 20px; 
 
             .sec4__contain {
                 @include breakpoint(phablet) {
-                    margin-top: -160px;
+                    margin-top: -40px;
                     flex-direction: row;
                     justify-content: space-between;
-                    align-items: flex-end;
+                    align-items: center;
                     padding: 0px;
                 }
                 display: flex;
@@ -681,6 +993,7 @@ html, body {
                     align-items: center;
                     width: 250px;
                     margin-bottom: 25px;
+                    z-index: 550;
 
                     .image1 {
                         @include breakpoint(phablet) {
@@ -700,28 +1013,49 @@ html, body {
 
                 .textRight {
                     @include breakpoint(phablet) {
-                        text-align: left;
-                        font-size: 24px;
-                        line-height: 28px;
-                        padding: 0px 40px 20px 40px;
-                    }
-                    @include breakpoint(desktop) {
-                        font-size: 32px;
-                        line-height: 36px;
+                        padding: 0px 40px 0px 40px;
                     }
                     color: #295C22; 
-                    font-weight: 700;
-                    font-size: 22px;
-                    line-height: 26px;
                     box-sizing: border-box;
                     padding: 0px;
                     text-align: center;
+
+                    .textRight__top {
+                        @include breakpoint(phablet) {
+                            font-size: 24px;
+                            line-height: 28px;
+                        }
+                        @include breakpoint(desktop) {
+                            font-size: 32px;
+                            line-height: 36px;
+                        }
+                        font-size: 32px;
+                        line-height: 36px;
+                        margin-bottom: 40px;
+                        font-size: 22px;
+                        line-height: 26px;
+
+                        span {
+                            font-family: $font-family-bold;
+                            font-weight: bolder;
+                        }
+                    }
+
+                    .textRight__bot {
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: 50px;
+                        line-height: 54px;
+                    }
                 }
             }
         }
     }
 
     .sec5 {
+        @include breakpoint(phablet) {
+            margin-top: -40px;
+        }
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -729,6 +1063,7 @@ html, body {
         width: 100%;
         background-color: #437D3B;
         position: relative;
+        margin-top: 0px;
 
         .sec5__top {
             @include breakpoint(phablet) {
@@ -777,6 +1112,10 @@ html, body {
                 line-height: 26px;
                 max-width: 550px;
                 z-index: 750;
+
+                .text1 {
+                    margin-bottom: 30px;
+                }
             }
 
             .sec5__imageLeft {
@@ -787,7 +1126,7 @@ html, body {
                 position: absolute;
                 left: -50px;
                 top: 50%;
-                transform: translateY(-50%);
+                transform: translateY(0%);
                 z-index: 750;
                 opacity: 0;
                 pointer-events: none;
@@ -801,10 +1140,94 @@ html, body {
                 position: absolute;
                 right: -50px;
                 top: 50%;
-                transform: translateY(-50%);
+                transform: translateY(0%);
                 z-index: 750;
                 opacity: 0;
                 pointer-events: none;
+            }
+        }
+
+        .sec5__greenTop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            background-color: #92C95E;
+            box-sizing: border-box;
+            padding: 30px 20px;
+            z-index: 550;
+
+            .greenTop__text {
+                font-size: 40px;
+                line-height: 44px;
+                color: white;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                text-align: center;
+                max-width: 1000px;
+            }
+        }
+
+        .sec5__greenBot {
+            @include breakpoint(phablet) {
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 80px 20px;
+            }
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 50px 20px;
+            background-image: url("../static/section5/sec5-background2.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+
+            .treeContainer {
+                @include breakpoint(phablet) {
+                   margin: 0px 10px 0px 10px;
+                }
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                max-width: 300px;
+                margin-bottom: 0 0 0 40px;
+                z-index: 550;
+
+                .treeContainer__title {
+                    width: 100%;
+                    font-size: 50px;
+                    line-height: 54px;
+                    color: #295C22;
+                    font-weight: bold;
+                    margin-bottom: 25px;
+                    text-align: center;
+                }
+
+                .treeContainer__center {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    margin-bottom: 25px;
+                    min-height: 400px;
+
+                    .treeContainer__imageCenter {
+                        max-width: 100%;
+                    }
+                }
+
+                .treeContainer__description {
+                    font-size: 28px;
+                    line-height: 32px;
+                    color: #295C22;
+                    font-weight: bold;
+                    text-align: center;
+                }
             }
         }
 
@@ -814,24 +1237,32 @@ html, body {
             z-index: 500;
 
             .slick-prev {
+                @include breakpoint(phablet) {
+                    width: 80px;
+                    height: 160px;
+                }
                 position: absolute;
                 left: 20px;
                 top: 50%;
                 transform: translateY(-50%);
                 width: 40px;
-                height: 40px;
+                height: 80px;
                 cursor: pointer;
                 z-index: 9999;
                 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)), drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
             }
 
             .slick-next {
+                @include breakpoint(phablet) {
+                    width: 80px;
+                    height: 160px;
+                }
                 position: absolute;
                 right: 20px;
                 top: 50%;
                 transform: translateY(-50%);
                 width: 40px;
-                height: 40px;
+                height: 80px;
                 cursor: pointer;
                 z-index: 9999;
                 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)), drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));

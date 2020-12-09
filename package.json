@@ -28,6 +28,8 @@
     "rimraf": "^3.0.2",
     "sass-loader": "^10.0.1",
     "scroll-out": "^2.2.12",
+    "scrollmagic": "^2.0.8",
+    "scrollmagic-plugin-gsap": "^1.0.4",
     "slick-carousel": "^1.8.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",

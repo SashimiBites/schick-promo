@@ -1,24 +1,12 @@
 @font-face {
-    font-family: 'Galyon-Regular';
-    src: url("../static/fonts/Galyon-Regular.otf");
+    font-family: 'DINPro-CondMedium';
+    src: url("../static/fonts/DINPro-CondMedium.otf");
 }
 
 @font-face {
-    font-family: 'HMSans-SemiBold';
-    src: url("../static/fonts/HMSans-SemiBold.otf");
+    font-family: 'DINPro-CondBold';
+    src: url("../static/fonts/DINPro-CondBold.ttf");
 }
 
-@font-face {
-    font-family: 'HMSerif-Regular';
-    src: url("../static/fonts/HMSerif-Regular.ttf");
-}
-
-@font-face {
-    font-family: 'HMSerif-SemiBold';
-    src: url("../static/fonts/HMSerif-SemiBold.ttf");
-}
-
-$font-family-primary: "Galyon-Regular", sans-serif;
-$font-family-bold: "HMSans-SemiBold", sans-serif;
-
-$font-family-secondary: "HMSerif-Regular", sans-serif;
+$font-family-primary: "DINPro-CondMedium", sans-serif;
+$font-family-bold: "DINPro-CondBold", sans-serif;
